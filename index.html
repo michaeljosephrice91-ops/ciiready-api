@@ -385,7 +385,7 @@
     <div class="footer-text">
       CIIReady is an independent revision tool. It is not affiliated with, endorsed by, or derived from CII examination materials. All questions are independently authored and test publicly available regulatory knowledge from the FCA Handbook, UK legislation, and published regulatory guidance.
       <br><br>
-      © 2026 CIIReady · Questions? <a href="mailto:hello@ciiready.co.uk" style="color: var(--accent); text-decoration: none;">hello@ciiready.co.uk</a>
+      © 2026 CIIReady · Questions? <a href="mailto:hello@ciiready.com" style="color: var(--accent); text-decoration: none;">hello@ciiready.com</a>
     </div>
   </div>
 
@@ -515,13 +515,13 @@
       successBox.classList.add('visible');
 
       if (token) {
-        const appUrl = 'https://app.ciiready.co.uk?token=' + token;
+        const appUrl = 'https://app.ciiready.com?token=' + token;
         successLink.href = appUrl;
       } else {
         successLink.style.display = 'none';
         document.querySelector('.success-text').innerHTML =
           'Payment confirmed. Check your email for your personal access link.<br>' +
-          'If it doesn\'t arrive in a few minutes, contact <a href="mailto:hello@ciiready.co.uk" style="color: var(--accent);">hello@ciiready.co.uk</a>';
+          'If it doesn\'t arrive in a few minutes, contact <a href="mailto:hello@ciiready.com" style="color: var(--accent);">hello@ciiready.com</a>';
       }
 
       // Scroll to success box
