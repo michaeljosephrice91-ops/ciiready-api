@@ -238,6 +238,35 @@
     }
     .success-btn:hover { background: var(--accent-hover); }
 
+    /* TESTIMONIAL */
+    .testimonial {
+      margin-bottom: 48px;
+    }
+    .testimonial-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 32px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--accent);
+    }
+    .testimonial-quote {
+      font-size: 17px; line-height: 1.65;
+      color: var(--text-primary); margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-quote::before { content: '\201C'; }
+    .testimonial-quote::after { content: '\201D'; }
+    .testimonial-attribution {
+      font-size: 13px; font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .testimonial-label {
+      font-family: var(--mono); font-size: 11px; font-weight: 600;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 12px; border-radius: 20px;
+      display: inline-block; margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+
     /* ABOUT */
     .about {
       max-width: 720px; margin: 0 auto; padding: 0 24px 48px;
@@ -360,6 +389,15 @@
       </div>
     </div>
 
+    <!-- TESTIMONIAL -->
+    <div class="testimonial">
+      <div class="testimonial-label">From a beta tester</div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">CIIReady has been invaluable in preparing me for the R01 exam, a very dry topic usually. The application is easy to use, well designed and gets to the crux of what applicants need to know.</div>
+        <div class="testimonial-attribution">Benjamin Duffield — R01 candidate</div>
+      </div>
+    </div>
+
     <!-- PAYMENT -->
     <div class="pay-section" id="pay-section">
       <div class="pay-info">
@@ -443,11 +481,11 @@
     <div class="footer-text">
       CIIReady is an independent revision tool. It is not affiliated with, endorsed by, or derived from CII examination materials. All questions are independently authored and test publicly available regulatory knowledge from the FCA Handbook, UK legislation, and published regulatory guidance.
       <br><br>
-      © 2026 CIIReady · Questions? <a href="mailto:hello@ciiready.com" style="color: var(--accent); text-decoration: none;">hello@ciiready.com</a>
+      © 2026 CIIReady · Questions? <a href="/cdn-cgi/l/email-protection#adc5c8c1c1c2edcec4c4dfc8ccc9d483cec2c0" style="color: var(--accent); text-decoration: none;"><span class="__cf_email__" data-cfemail="375f525b5b5877545e5e455256534e1954585a">[email&#160;protected]</span></a>
     </div>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ═══════════════════════════════════════════════════════════════
     // CONFIG — update these two values before going live
     // ═══════════════════════════════════════════════════════════════
@@ -579,13 +617,4 @@
         successLink.style.display = 'none';
         document.querySelector('.success-text').innerHTML =
           'Payment confirmed. Check your email for your personal access link.<br>' +
-          'If it doesn\'t arrive in a few minutes, contact <a href="mailto:hello@ciiready.com" style="color: var(--accent);">hello@ciiready.com</a>';
-      }
-
-      // Scroll to success box
-      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  </script>
-
-</body>
-</html>
+          'If it doesn\'t arrive in a few minutes, contact <a href="
