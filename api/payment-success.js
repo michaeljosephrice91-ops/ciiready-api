@@ -44,7 +44,14 @@ module.exports = async function handler(req, res) {
     const supabaseUrl = process.env.SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-    if (supabaseUrl && supabaseKey) {
+    if (!supabaseUrl || !supabaseKey) {
+      console.error('[supabase-config] Missing Supabase environment variables');
+      return res.status(500).json({
+        error: 'Payment succeeded, but we could not prepare your access automatically. Please contact hello@ciiready.com.',
+      });
+    }
+
+    try {
       const insertRes = await fetch(supabaseUrl + '/rest/v1/purchases', {
         method: 'POST',
         headers: {
@@ -65,11 +72,19 @@ module.exports = async function handler(req, res) {
       if (!insertRes.ok) {
         const errText = await insertRes.text();
         console.error('[supabase-insert]', insertRes.status, errText);
+        return res.status(500).json({
+          error: 'Payment succeeded, but we could not prepare your access automatically. Please contact hello@ciiready.com.',
+        });
       }
+    } catch (supabaseErr) {
+      console.error('[supabase-insert]', supabaseErr.message);
+      return res.status(500).json({
+        error: 'Payment succeeded, but we could not prepare your access automatically. Please contact hello@ciiready.com.',
+      });
     }
 
     // 4. Send access email via Resend
-const appUrl = process.env.APP_URL || 'https://app.r0ready.com';
+    const appUrl = process.env.APP_URL || 'https://app.r0ready.com';
     const accessLink = appUrl + '?token=' + accessToken;
     const fromEmail = process.env.FROM_EMAIL || 'R0Ready <hello@ciiready.com>';
     const firstName = name ? name.split(' ')[0] : '';
@@ -115,10 +130,15 @@ const appUrl = process.env.APP_URL || 'https://app.r0ready.com';
     if (!emailRes.ok) {
       const errText = await emailRes.text();
       console.error('[resend-email]', emailRes.status, errText);
-      return res.status(500).json({ error: 'Payment succeeded but email failed. Contact hello@ciiready.com' });
+      return res.status(200).json({
+        success: true,
+        accessToken: accessToken,
+        emailSent: false,
+        warning: 'Payment confirmed. Your email did not send, so open the app below and bookmark that link. If you need help, contact hello@ciiready.com.',
+      });
     }
 
-    return res.status(200).json({ success: true, accessToken: accessToken });
+    return res.status(200).json({ success: true, accessToken: accessToken, emailSent: true });
   } catch (err) {
     console.error('[payment-success]', err.message);
     return res.status(500).json({ error: 'Internal error. Contact hello@ciiready.com' });
