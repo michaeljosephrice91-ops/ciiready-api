@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R0Ready | Revision for the CII exams, starting with R01</title>
+  <meta name="description" content="R0Ready is revision for the CII Diploma in Regulated Financial Planning, starting with R01: original questions, timed mocks, and spaced repetition designed to help things stick.">
+  <meta property="og:title" content="R0Ready | Revision for the CII exams, starting with R01">
+  <meta property="og:description" content="R01 is live now: original questions, timed mocks, and spaced repetition designed for real recall.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://r0ready.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="R0Ready | Revision for the CII exams, starting with R01">
+  <meta name="twitter:description" content="R01 is live now. R02 to R05 will follow.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://r0ready.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    :root{--navy:#0a2b4e;--teal:#309796;--ink:#10263f;--muted:#5b6c80;--line:rgba(10,43,78,.12);--bg:#f4f0e8;--card:rgba(255,255,255,.88);--card-strong:rgba(255,255,255,.95);--success:#177447;--danger:#c93e38;--font:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'JetBrains Mono',monospace;--radius:24px;--radius-sm:16px;--shadow:0 14px 34px rgba(10,43,78,.08)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--font);color:var(--ink);background:radial-gradient(circle at top left,rgba(48,151,150,.16),transparent 24%),linear-gradient(180deg,#f8f6f1 0%,var(--bg) 100%);-webkit-font-smoothing:antialiased}
+    a{color:inherit} p,h1,h2,h3{margin:0}
+    .page{width:min(1080px,calc(100% - 24px));margin:0 auto;padding:20px 0 40px}
+    .surface{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+    .nav,.hero,.section,.testimonial,.footer-card{padding:18px 20px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600}
+    .mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:700}
+    .tag,.status,.eyebrow,.kicker{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+    .tag,.eyebrow{background:rgba(48,151,150,.12);color:var(--teal)}
+    .nav-links{display:inline-flex;gap:8px;flex-wrap:wrap}.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;padding:8px 10px;border-radius:10px}.nav-links a:hover{background:rgba(10,43,78,.06)}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;padding:34px}
+    h1{font-size:clamp(44px,8vw,68px);line-height:.95;letter-spacing:-.055em;max-width:760px}
+    h2{font-size:clamp(30px,5vw,40px);letter-spacing:-.045em;line-height:1}
+    .lead{margin-top:18px;font-size:18px;line-height:1.72;color:var(--muted);max-width:690px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .button,.button-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:14px;text-decoration:none;font-size:14px;font-weight:600}
+    .button{background:var(--navy);color:#fff;border:1px solid var(--navy)} .button-secondary{background:rgba(255,255,255,.82);border:1px solid var(--line)}
+    .hero-stats,.feature-grid,.module-grid,.why-grid,.buy-grid{display:grid;gap:12px}
+    .hero-stats{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+    .stat,.panel,.feature,.module,.founder,.detail,.price-card,.pay-form,.success-box{padding:18px;border:1px solid var(--line);border-radius:var(--radius-sm);background:rgba(255,255,255,.78)}
+    .stat strong{display:block;font-size:24px;letter-spacing:-.04em;margin-bottom:6px}.stat span,.copy,.panel p,.feature p,.module p,.detail p,.founder p,.price-card p,.footer-card p{color:var(--muted);font-size:14px;line-height:1.74}
+    .panel{background:linear-gradient(180deg,rgba(10,43,78,.98),rgba(15,58,97,.94));color:#f1f5f8}.panel p,.panel li{color:rgba(241,245,248,.82)} .panel ul{margin:12px 0 0;padding-left:18px;line-height:1.65}
+    .section,.testimonial,.footer-card{margin-top:16px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}.kicker{background:rgba(10,43,78,.07);color:var(--navy);margin-bottom:10px}
+    .feature-grid{grid-template-columns:1.05fr .95fr}.feature-stack{display:grid;gap:12px}
+    .status-live{background:rgba(23,116,71,.12);color:var(--success)} .status-beta{background:rgba(10,43,78,.08);color:var(--navy)}
+    .r01-title{margin-top:12px;font-size:34px;letter-spacing:-.045em;line-height:1}.subtitle{margin-top:8px;font-size:16px;font-weight:600;color:var(--muted)}
+    .prose p + p,.founder p + p{margin-top:14px}
+    .feature-list,.pay-points{margin:16px 0 0;padding-left:18px;color:var(--muted);font-size:14px;line-height:1.7}.feature-list li + li,.pay-points li + li{margin-top:8px}
+    .price-block{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+    .price-block strong,.price{display:block;font-size:56px;line-height:.95;letter-spacing:-.06em}.price-block span{color:var(--muted);font-size:14px}
+    .module-grid{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:18px}.module{display:flex;flex-direction:column;gap:10px;min-height:192px}.module h3{font-size:28px;letter-spacing:-.045em}.module-name{font-size:15px;font-weight:600;color:var(--muted);line-height:1.45}.module-meta{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:12px;line-height:1.6;color:#73859a}
+    .why-grid{grid-template-columns:1.05fr .95fr}.detail-stack{display:grid;gap:12px}.detail strong{display:block;margin-bottom:8px;font-size:15px}
+    .testimonial{background:linear-gradient(135deg,rgba(10,43,78,.98),rgba(20,72,117,.94));color:#f5f8fb}.testimonial .kicker{background:rgba(255,255,255,.09);color:#d5eeeb}.quote{font-size:clamp(24px,4vw,34px);line-height:1.35;letter-spacing:-.035em;margin-bottom:12px;max-width:880px}.quote-by{color:rgba(245,248,251,.76);font-size:14px}
+    .buy-grid{grid-template-columns:.96fr 1.04fr}.field{margin-bottom:14px}.field label{display:block;margin-bottom:6px;color:var(--muted);font-size:13px;font-weight:500}
+    .field input,#card-element{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(250,250,247,.96);font-family:var(--font);font-size:14px;color:var(--navy);outline:none}
+    .pay-btn{width:100%;min-height:48px;border:0;border-radius:14px;background:var(--navy);color:#fff;font-family:var(--font);font-size:15px;font-weight:600;cursor:pointer}.pay-btn:disabled{opacity:.65;cursor:not-allowed}
+    .pay-error{display:none;margin-top:12px;font-size:13px;color:var(--danger)} .pay-error.visible{display:block}.secure{margin-top:12px;text-align:center;color:#7a899a;font-size:12px}
+    .success-box{display:none;text-align:center;background:var(--card-strong)} .success-box.visible{display:block}.success-icon{width:50px;height:50px;margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;background:rgba(23,116,71,.12);color:var(--success);font-weight:700;font-size:18px}
+    .footer-card a,.detail a{color:var(--teal);text-decoration:none}
+    @media (max-width:980px){.hero,.feature-grid,.why-grid,.buy-grid{grid-template-columns:1fr}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-stats{grid-template-columns:1fr}}
+    @media (max-width:720px){.page{width:min(100%,calc(100% - 16px))}.nav{flex-direction:column;align-items:flex-start}.hero,.section,.testimonial,.footer-card{padding:22px}.module-grid{grid-template-columns:1fr}.actions{flex-direction:column}.button,.button-secondary{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav surface">
+      <a class="brand" href="/"><span class="mark">R0</span><span>R0Ready</span><span class="tag">R01 live</span></a>
+      <div class="nav-links"><a href="#r01">R01</a><a href="#future-modules">R02-R05</a><a href="#why">Why this exists</a><a href="#buy-r01">Buy R01</a></div>
+    </nav>
+
+    <section class="hero surface">
+      <div>
+        <div class="eyebrow">Revision for the CII diploma</div>
+        <h1>Revision for the CII exams that helps things stick.</h1>
+        <p class="lead">R0Ready is built for the Diploma in Regulated Financial Planning, starting with R01. Original questions, timed mocks, and spaced repetition designed to help what you study stay with you.</p>
+        <div class="actions"><a class="button" href="#buy-r01">Get R01 access - &pound;19</a><a class="button-secondary" href="#why">Why this exists</a></div>
+        <div class="hero-stats">
+          <div class="stat"><strong>230</strong><span>Original R01 questions across all 10 syllabus modules.</span></div>
+          <div class="stat"><strong>2</strong><span>Timed mock exams built to pressure-test recall, not just recognition.</span></div>
+          <div class="stat"><strong>1 - 60</strong><span>Review intervals that widen over time as knowledge starts to hold.</span></div>
+        </div>
+      </div>
+      <div class="feature-stack">
+        <div class="panel">
+          <h3>Built for the real shape of revision</h3>
+          <p>Most people are fitting this around work, not treating it like a full-time course. R0Ready is meant to be useful in short sessions and good at telling you what needs attention now.</p>
+          <ul>
+            <li>Short daily sessions rather than endless reset-to-zero revision.</li>
+            <li>Explanations for every answer, not just right-or-wrong feedback.</li>
+            <li>A tool that is trying to improve recall, not just volume.</li>
+          </ul>
+        </div>
+        <div class="feature"><strong>What makes it different</strong><p>You are not asked to work through a generic library and hope the repetition takes care of itself. Questions come back at deliberate intervals, so revision is organised around memory rather than momentum alone.</p></div>
+      </div>
+    </section>
+
+    <section class="section surface" id="r01">
+      <div class="section-head">
+        <div><div class="kicker">R01</div><h2>The first complete module</h2></div>
+        <p class="copy">R01 is live now as the finished paid product. It is the place to start if you want a revision tool that feels more serious than the usual question-bank approach.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature prose">
+          <span class="status status-live">Available now</span>
+          <h3 class="r01-title">R01: Financial services, regulation and ethics</h3>
+          <div class="subtitle">A focused revision tool, not a bloated course platform.</div>
+          <p>It combines a full question bank with a spaced repetition system, timed mock exams, and clear explanations for every answer. The aim is not just to get you through more questions. It is to help you remember what you have covered, spot where your understanding is thin, and build the kind of recall that holds up under exam conditions.</p>
+          <p>Questions are introduced gradually, then brought back at increasing intervals as recall improves. That gives you a clearer sense of progress, and a more useful way to revise than endlessly starting again from the top.</p>
+          <div class="price-block"><div><strong>&pound;19</strong><span>One payment. Full access to R01. No subscription.</span></div><a class="button" href="#buy-r01">Get R01 access</a></div>
+        </div>
+        <div class="feature-stack">
+          <div class="feature"><strong>What is included</strong><ul class="feature-list"><li>230 original exam-style questions across all 10 R01 modules</li><li>Spaced repetition review with adaptive intervals</li><li>Two timed mock exams</li><li>Detailed explanations for every answer</li><li>Difficulty filtering</li><li>Progress tracking across modules</li><li>Short, manageable study sessions</li></ul></div>
+          <div class="feature"><strong>How the review works</strong><p>A correct answer pushes the question further out. A weak one brings it back sooner. The point is simple: to spend less time rereading material you half-recognise, and more time strengthening what is still fragile.</p></div>
+          <div class="feature"><strong>What it is not</strong><p>It is not official CII material, not a coaching programme, and not a subscription library trying to become everything at once. It is a single-purpose revision product built carefully around one exam, then expanded from there.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface" id="future-modules">
+      <div class="section-head">
+        <div><div class="kicker">Next modules</div><h2>R0Ready starts with R01. It will not end there.</h2></div>
+        <p class="copy">The wider plan is to build the same kind of revision tool across the rest of the Diploma: original questions, proper explanations, and a structure designed around recall rather than content overload.</p>
+      </div>
+      <div class="module-grid">
+        <article class="module"><span class="status status-beta">Coming next</span><h3>R02</h3><div class="module-name">Investment principles and risk</div><p>The first follow-on module, using the same study logic as R01 with a lighter launch scope to begin with.</p><div class="module-meta">Question bank in progress<br>Beta mock planned<br>Audio explainer in progress</div></article>
+        <article class="module"><span class="status status-beta">In development</span><h3>R03</h3><div class="module-name">Personal taxation</div><p>Designed for people who want clearer practice around allowances, reliefs, and the parts of the syllabus that are easy to blur together.</p><div class="module-meta">Question bank in progress<br>Beta mock planned<br>Audio explainer to follow</div></article>
+        <article class="module"><span class="status status-beta">In development</span><h3>R04</h3><div class="module-name">Pensions and retirement planning</div><p>Built around the same idea: fewer distractions, stronger explanations, and better recall over time.</p><div class="module-meta">Question bank in progress<br>Beta mock planned<br>Audio explainer to follow</div></article>
+        <article class="module"><span class="status status-beta">In development</span><h3>R05</h3><div class="module-name">Financial protection</div><p>Included early because there is already clear demand for a better protection revision tool.</p><div class="module-meta">Question bank in progress<br>Beta mock planned<br>Audio explainer to follow</div></article>
+      </div>
+      <div class="actions" style="margin-top:18px;"><a class="button-secondary" href="mailto:hello@ciiready.com?subject=R0Ready%20module%20launch%20updates">Email me when new modules go live</a></div>
+    </section>
+
+    <section class="section surface" id="why">
+      <div class="section-head">
+        <div><div class="kicker">Why this exists</div><h2>Built by someone who wanted a better way to revise.</h2></div>
+        <p class="copy">This is not a revision brand built by committee. The founder story matters because it explains why the product feels the way it does.</p>
+      </div>
+      <div class="why-grid">
+        <div class="founder">
+          <p>I'm Michael Rice. I'm training as a financial adviser, and I built R0Ready because I wanted a revision tool that felt more serious than the usual options.</p>
+          <p>When I started studying, most of what I found fell into two camps: expensive courses that made the process bigger than it needed to be, or flat question banks that gave you no real help in remembering what you had covered. Plenty of material. Not much method.</p>
+          <p>R0Ready is my attempt to build something better: small, focused, and grounded in how memory actually works. Spaced repetition has been used for years in other demanding fields because it does something ordinary revision often fails to do. It helps knowledge stay put.</p>
+          <p>Before this I studied philosophy, taught abroad, and worked in edtech. I also write <strong>Unadvised</strong>, a newsletter about money, work, and career change. That voice matters here too. The aim is not to sound bigger than the product is. It is to make something genuinely useful.</p>
+        </div>
+        <div class="detail-stack">
+          <div class="detail"><strong>What this product is trying to be</strong><p>Quietly well made. Clear about what is live and what is not. More interested in usefulness than in looking like a revision empire on day one.</p></div>
+          <div class="detail"><strong>What it is built around</strong><p>Original questions, proper explanations, timed practice, and study sequencing that reduces the mental drag of deciding what to revise next.</p></div>
+          <div class="detail"><strong>Contact</strong><p>Questions, issues, or future-module interest: <a href="mailto:hello@ciiready.com">hello@ciiready.com</a></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial surface">
+      <div class="kicker">What early users have said</div>
+      <p class="quote">"CIIReady has been invaluable in preparing me for the R01 exam, a very dry topic usually. The application is easy to use, well designed and gets to the crux of what applicants need to know."</p>
+      <div class="quote-by">Benjamin Duffield, R01 candidate</div>
+    </section>
+
+    <section class="section surface" id="buy-r01">
+      <div class="section-head">
+        <div><div class="kicker">Get started</div><h2>Start with the live module.</h2></div>
+        <p class="copy">One payment gives you full access to the current R01 product: the question bank, spaced repetition engine, timed mocks, and future improvements to that module.</p>
+      </div>
+      <div class="buy-grid">
+        <div class="price-card" id="pay-section">
+          <span class="mark">R1</span>
+          <span class="price">&pound;19</span>
+          <p>One-time payment for full R01 access.</p>
+          <ul class="pay-points"><li>230 original R01 questions with detailed explanations</li><li>All 10 syllabus modules covered</li><li>Two timed mock exams</li><li>Spaced repetition scheduling</li><li>Progress saved across sessions and devices</li><li>Immediate access link on successful purchase</li></ul>
+        </div>
+        <div>
+          <div class="pay-form" id="pay-form">
+            <h3>Buy R0Ready R01</h3>
+            <div class="field"><label for="name">Full name</label><input type="text" id="name" placeholder="e.g. Sarah Mitchell" autocomplete="name" required></div>
+            <div class="field"><label for="email">Email address</label><input type="email" id="email" placeholder="e.g. sarah@example.com" autocomplete="email" required></div>
+            <div class="field"><label for="card-element">Card details</label><div id="card-element"></div></div>
+            <button class="pay-btn" id="pay-btn" type="button">Pay &pound;19 -&gt;</button>
+            <div class="pay-error" id="pay-error"></div>
+            <div class="secure">Secured by Stripe. Card details never touch our servers.</div>
+          </div>
+          <div class="success-box" id="success-box">
+            <div class="success-icon">+</div>
+            <h3>You're in.</h3>
+            <p id="success-text">Your R01 access is ready. Open the app below and bookmark the link for future use.</p>
+            <a class="button" id="success-link" href="#">Open R0Ready R01</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-card surface">
+      <p>R0Ready is an independent revision tool. It is not affiliated with, endorsed by, or derived from Chartered Insurance Institute examination materials. All questions are independently authored and test publicly available regulatory knowledge from the FCA Handbook, UK legislation, and published guidance.</p>
+      <p>&copy; 2026 R0Ready. Questions? <a href="mailto:hello@ciiready.com">hello@ciiready.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    const STRIPE_KEY = 'pk_live_51T4e5G2E15Hnwttf52gaDvKVWfOOuxcFKM8wr4TcOb45It5uaGvxLcfzGXHZp6QtQH6bn67CeCSo6KryBDGDDeWF00qhnGsbnC';
+    const API_BASE = '';
+    const stripe = Stripe(STRIPE_KEY);
+    const elements = stripe.elements({ fonts: [{ cssSrc: 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap' }] });
+    const cardElement = elements.create('card', { style: { base: { fontFamily: "'Outfit', sans-serif", fontSize: '14px', color: '#0a2b4e', '::placeholder': { color: '#7d8ca0' } }, invalid: { color: '#c93e38' } }, hidePostalCode: true });
+    cardElement.mount('#card-element');
+    const payBtn = document.getElementById('pay-btn');
+    const payError = document.getElementById('pay-error');
+    const paySection = document.getElementById('pay-section');
+    const payForm = document.getElementById('pay-form');
+    const successBox = document.getElementById('success-box');
+    const successLink = document.getElementById('success-link');
+    const successText = document.getElementById('success-text');
+    function showError(message) { payError.textContent = message; payError.classList.add('visible'); }
+    function clearError() { payError.textContent = ''; payError.classList.remove('visible'); }
+    function showSuccess(token, message) {
+      paySection.style.display = 'none';
+      payForm.style.display = 'none';
+      successBox.classList.add('visible');
+      if (message) successText.innerHTML = message;
+      if (token) { successLink.href = 'https://app.r0ready.com?token=' + token; successLink.style.display = 'inline-flex'; }
+      else { successLink.style.display = 'none'; }
+    }
+    payBtn.addEventListener('click', async () => {
+      clearError();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!name) return showError('Please enter your name.');
+      if (!email || !email.includes('@')) return showError('Please enter a valid email address.');
+      payBtn.disabled = true;
+      payBtn.textContent = 'Processing...';
+      try {
+        const intentRes = await fetch(API_BASE + '/api/create-payment-intent', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, name, product: 'ciiready-r01' }) });
+        if (!intentRes.ok) { const err = await intentRes.json().catch(() => ({})); throw new Error(err.error || 'Could not create payment. Please try again.'); }
+        const { clientSecret } = await intentRes.json();
+        const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, { payment_method: { card: cardElement, billing_details: { name, email } } });
+        if (error) throw new Error(error.message);
+        if (paymentIntent.status !== 'succeeded') throw new Error('Payment was not completed. Please try again.');
+        const successRes = await fetch(API_BASE + '/api/payment-success', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ paymentIntentId: paymentIntent.id, email, name, product: 'ciiready-r01' }) });
+        const successData = await successRes.json().catch(() => ({}));
+        if (successData.accessToken) return showSuccess(successData.accessToken, successData.warning || null);
+        if (!successRes.ok) throw new Error(successData.error || 'Payment succeeded, but we could not prepare your access link automatically. Please contact hello@ciiready.com.');
+        showSuccess(null);
+      } catch (err) {
+        showError(err.message || 'Payment failed. Please try again.');
+        payBtn.disabled = false;
+        payBtn.textContent = 'Pay \u00A319 ->';
+      }
+    });
+  </script>
+</body>
+</html>
