@@ -1,0 +1,12 @@
+{
+  "name": "ciiready-api",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "stripe:create-full-product": "node scripts/create-r0ready-full-product.js"
+  },
+  "dependencies": {
+    "stripe": "^17.0.0",
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
