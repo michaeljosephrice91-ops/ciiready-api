@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Companion | R0Ready</title>
+  <meta name="description" content="Free podcast companion to R0Ready. One module at a time, one episode per topic, hosted by someone sitting the exams right now.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://r0ready.com/spotify/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg-base:#0D0F14;--bg-surface:#14171E;--bg-elevated:#1C1F28;--bg-inset:#0A0C10;--text-primary:#F1F2F4;--text-secondary:#9B9FA8;--text-tertiary:#5A5E6A;--accent-green:#00E676;--accent-green-dim:#00C853;--accent-green-glow:rgba(0,230,118,.15);--accent-cyan:#00E5FF;--accent-cyan-dim:#00B8D4;--border-subtle:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);--font:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'JetBrains Mono',monospace;--radius:24px;--radius-sm:16px}
+    body[data-theme="light"]{--bg-base:#f4f0e8;--bg-surface:rgba(255,255,255,.9);--bg-elevated:rgba(255,255,255,.96);--bg-inset:#eef2f6;--text-primary:#10263f;--text-secondary:#5b6c80;--text-tertiary:#7b8795;--accent-green:#12a150;--accent-green-dim:#0f8d46;--accent-green-glow:rgba(18,161,80,.16);--accent-cyan:#0d94b8;--accent-cyan-dim:#087b99;--border-subtle:rgba(10,43,78,.12);--border-hover:rgba(10,43,78,.22)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;color-scheme:dark}
+    body{margin:0;font-family:var(--font);color:var(--text-secondary);background:radial-gradient(circle at top left,rgba(0,230,118,.06),transparent 22%),radial-gradient(circle at top right,rgba(0,229,255,.05),transparent 18%),var(--bg-base);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent-cyan);transition:color .2s ease,border-color .2s ease,background-color .2s ease,box-shadow .2s ease} a:hover{color:var(--accent-cyan-dim)}
+    .page{width:min(1080px,calc(100% - 24px));margin:0 auto;padding:20px 0 40px}
+    .surface{border:1px solid var(--border-subtle);border-radius:var(--radius);background:var(--bg-surface)}
+    .surface,.panel,.button,.button-secondary,.theme-toggle{transition:border-color .2s ease,background-color .2s ease,color .2s ease,box-shadow .2s ease}
+    .surface:hover,.panel:hover{border-color:var(--border-hover)}
+    .nav,.hero,.section,.footer-card{padding:18px 20px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px;background:var(--bg-elevated)}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;color:var(--text-primary)}
+    .mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--bg-inset);color:var(--text-primary);font-weight:600;border:1px solid var(--border-subtle)}
+    .tag,.eyebrow{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+    .tag{background:rgba(0,230,118,.12);color:var(--accent-green);border:1px solid rgba(0,230,118,.16)}
+    .eyebrow{background:rgba(255,255,255,.04);color:var(--text-secondary);border:1px solid var(--border-subtle)}
+    body[data-theme="light"] .eyebrow{background:rgba(10,43,78,.05)}
+    .nav-links{display:inline-flex;gap:8px;flex-wrap:wrap}.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:14px;padding:8px 10px;border-radius:10px}.nav-links a:hover{color:var(--text-primary);background:rgba(255,255,255,.04)}
+    body[data-theme="light"] .nav-links a:hover{background:rgba(10,43,78,.06)}
+    .nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .theme-toggle{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border-radius:12px;border:1px solid var(--border-subtle);background:transparent;color:var(--text-primary);font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer}
+    .theme-toggle:hover{border-color:var(--border-hover)}
+    .theme-toggle-indicator{font-family:var(--mono);font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.04em}
+    .hero,.content-grid{display:grid;gap:18px}
+    .hero{grid-template-columns:1.1fr .9fr;padding:34px}
+    .content-grid{grid-template-columns:1.05fr .95fr}
+    h1,h2,h3{margin:0;color:var(--text-primary);font-weight:600}
+    h1{font-size:clamp(44px,8vw,68px);line-height:.95;letter-spacing:-.055em}
+    h2{font-size:clamp(30px,5vw,40px);letter-spacing:-.045em;line-height:1}
+    .lead{margin-top:18px;font-size:18px;line-height:1.72;color:var(--text-secondary);max-width:680px}
+    .button,.button-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:14px;text-decoration:none;font-size:14px;font-weight:600}
+    .button{background:var(--accent-green);color:var(--bg-base);border:1px solid var(--accent-green);box-shadow:0 0 20px var(--accent-green-glow)}
+    .button:hover{background:var(--accent-green-dim);border-color:var(--accent-green-dim);color:var(--bg-base);box-shadow:0 0 28px rgba(0,230,118,.22)}
+    .button-secondary{background:transparent;border:1px solid var(--border-subtle);color:var(--text-primary)}
+    .button-secondary:hover{border-color:var(--accent-cyan);color:var(--accent-cyan);background:rgba(0,229,255,.04)}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .panel,.footer-card{padding:18px;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);background:var(--bg-surface)}
+    .panel p,.panel li,.footer-card p{font-size:14px;line-height:1.74;color:var(--text-secondary)}
+    .panel ul{margin:12px 0 0;padding-left:18px}
+    .panel li + li{margin-top:8px}
+    .embed-shell{padding:10px;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);background:var(--bg-inset)}
+    .embed-shell iframe{display:block;width:100%;min-height:352px;border:0;border-radius:18px}
+    .section,.footer-card{margin-top:16px}
+    @media (max-width:980px){.hero,.content-grid{grid-template-columns:1fr}}
+    @media (max-width:720px){.page{width:min(100%,calc(100% - 16px))}.nav{flex-direction:column;align-items:flex-start}.hero,.section,.footer-card{padding:22px}.actions{flex-direction:column}.button,.button-secondary{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav surface">
+      <a class="brand" href="/"><span class="mark">R0</span><span>R0Ready</span><span class="tag">Spotify companion</span></a>
+      <div class="nav-right">
+        <div class="nav-links"><a href="/">Home</a><a href="/demo/">Try free</a><a href="/#buy">Buy access</a></div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme">
+          <span id="theme-toggle-label">Light mode</span>
+          <span class="theme-toggle-indicator" id="theme-toggle-indicator">Dark</span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero surface">
+      <div>
+        <div class="eyebrow">Spotify companion</div>
+        <h1>Free podcast companion to R0Ready.</h1>
+        <p class="lead">One module at a time, one episode per topic. Hosted by someone sitting the exams right now - and making these because nothing forces you to learn something properly like having to explain it out loud.</p>
+        <div class="actions">
+          <a class="button" href="https://open.spotify.com/show/6zu0dWxwZ7CSqPO9MkNBdO?si=wC6zV2NuSe-E8B2Z940duQ" target="_blank" rel="noreferrer">Listen on Spotify</a>
+          <a class="button-secondary" href="/#buy">Back to R0Ready</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>What it is for</h3>
+        <p style="margin-top:12px">This is the audio companion to the revision flow, not a separate product pretending to be a course. The episodes follow the same exams, the same modules, and the same basic idea: make the material easier to understand, easier to hold, and easier to come back to later.</p>
+        <ul>
+          <li>One module at a time</li>
+          <li>One episode per topic</li>
+          <li>Built by someone taking the exams now</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section surface">
+      <div class="content-grid">
+        <div class="panel">
+          <h2>Why it exists</h2>
+          <p style="margin-top:12px">The question bank helps you find what you do not know. The podcast helps you hear it explained cleanly, out loud, by someone close enough to the exams to know where the confusion usually starts.</p>
+          <p style="margin-top:12px">It is there for commutes, walks, and the parts of the week when staring at a textbook is not realistic but you still want to keep the material moving.</p>
+        </div>
+        <div class="embed-shell">
+          <iframe src="https://open.spotify.com/embed/show/6zu0dWxwZ7CSqPO9MkNBdO?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-card surface">
+      <p>&copy; 2026 R0Ready. Questions? <a href="mailto:hello@r0ready.com">hello@r0ready.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    const THEME_KEY = 'r0ready-landing-theme';
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleLabel = document.getElementById('theme-toggle-label');
+    const themeToggleIndicator = document.getElementById('theme-toggle-indicator');
+    function applyTheme(theme) {
+      const nextTheme = theme === 'light' ? 'light' : 'dark';
+      document.body.dataset.theme = nextTheme;
+      document.documentElement.style.colorScheme = nextTheme;
+      themeToggleLabel.textContent = nextTheme === 'dark' ? 'Light mode' : 'Dark mode';
+      themeToggleIndicator.textContent = nextTheme === 'dark' ? 'Dark' : 'Light';
+      try { localStorage.setItem(THEME_KEY, nextTheme); } catch {}
+    }
+    function initTheme() {
+      let storedTheme = 'light';
+      try { storedTheme = localStorage.getItem(THEME_KEY) || 'light'; } catch {}
+      applyTheme(storedTheme);
+    }
+    themeToggle.addEventListener('click', () => {
+      applyTheme(document.body.dataset.theme === 'light' ? 'dark' : 'light');
+    });
+    initTheme();
+  </script>
+</body>
+</html>
