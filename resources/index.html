@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CII R0 Exam Resources | R0Ready</title>
+  <meta name="description" content="Helpful CII R0 exam resources for R01-R05 candidates: official CII links, training providers, exam tips, communities, podcasts, and study materials.">
+  <meta property="og:title" content="CII R0 Exam Resources | R0Ready">
+  <meta property="og:description" content="A curated list of useful links for CII R01-R05 candidates, from official CII resources to third-party training, podcasts, and exam tips.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://r0ready.com/resources/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CII R0 Exam Resources | R0Ready">
+  <meta name="twitter:description" content="Helpful links and study resources for CII R01-R05 candidates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://r0ready.com/resources/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg-base:#07090D;--bg-surface:#171C24;--bg-elevated:#212834;--bg-inset:#0D1117;--text-primary:#F1F2F4;--text-secondary:#A7AFBB;--text-tertiary:#6D7684;--accent-green:#00E676;--accent-green-dim:#00C853;--accent-green-glow:rgba(0,230,118,.15);--accent-cyan:#00E5FF;--accent-cyan-dim:#00B8D4;--border-subtle:rgba(255,255,255,.09);--border-hover:rgba(255,255,255,.16);--font:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'JetBrains Mono',monospace;--radius:24px;--radius-sm:16px}
+    body[data-theme="light"]{--bg-base:#f4f0e8;--bg-surface:rgba(255,255,255,.9);--bg-elevated:rgba(255,255,255,.96);--bg-inset:#eef2f6;--text-primary:#10263f;--text-secondary:#5b6c80;--text-tertiary:#7b8795;--accent-green:#12a150;--accent-green-dim:#0f8d46;--accent-green-glow:rgba(18,161,80,.16);--accent-cyan:#0d94b8;--accent-cyan-dim:#087b99;--border-subtle:rgba(10,43,78,.12);--border-hover:rgba(10,43,78,.22)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;color-scheme:dark}
+    body{margin:0;font-family:var(--font);color:var(--text-secondary);background:radial-gradient(circle at top left,rgba(0,230,118,.06),transparent 22%),radial-gradient(circle at top right,rgba(0,229,255,.05),transparent 18%),var(--bg-base);-webkit-font-smoothing:antialiased}
+    a{color:var(--accent-cyan);transition:color .2s ease,border-color .2s ease,background-color .2s ease,box-shadow .2s ease}
+    a:hover{color:var(--accent-cyan-dim)}
+    ::selection{background:rgba(0,229,255,.2);color:var(--text-primary)}
+    body::-webkit-scrollbar{width:12px}
+    body::-webkit-scrollbar-track{background:var(--bg-base)}
+    body::-webkit-scrollbar-thumb{background:var(--bg-elevated);border-radius:999px;border:2px solid var(--bg-base)}
+    body::-webkit-scrollbar-thumb:hover{background:#262a35}
+    .page{width:min(1120px,calc(100% - 24px));margin:0 auto;padding:20px 0 40px}
+    .surface{border:1px solid var(--border-subtle);border-radius:var(--radius);background:var(--bg-surface)}
+    .surface,.panel,.resource-card,.button,.button-secondary,.theme-toggle,.jump-link{transition:border-color .2s ease,background-color .2s ease,color .2s ease,box-shadow .2s ease}
+    .surface:hover,.panel:hover,.resource-card:hover{border-color:var(--border-hover)}
+    .nav,.hero,.section,.footer-card,.jump-shell{padding:18px 20px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px;background:var(--bg-elevated)}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;color:var(--text-primary)}
+    .mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--bg-inset);color:var(--text-primary);font-weight:600;border:1px solid var(--border-subtle)}
+    .tag,.eyebrow,.kicker,.chip{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+    .tag{background:rgba(0,230,118,.12);color:var(--accent-green);border:1px solid rgba(0,230,118,.16)}
+    .eyebrow,.kicker,.chip{background:rgba(255,255,255,.04);color:var(--text-secondary);border:1px solid var(--border-subtle)}
+    body[data-theme="light"] .eyebrow,body[data-theme="light"] .kicker,body[data-theme="light"] .chip{background:rgba(10,43,78,.05)}
+    .nav-links{display:inline-flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{text-decoration:none;color:var(--text-secondary);font-size:14px;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{color:var(--text-primary);background:rgba(255,255,255,.04)}
+    body[data-theme="light"] .nav-links a:hover{background:rgba(10,43,78,.06)}
+    .nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .theme-toggle{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border-radius:12px;border:1px solid var(--border-subtle);background:transparent;color:var(--text-primary);font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer}
+    .theme-toggle:hover{border-color:var(--border-hover)}
+    .theme-toggle-indicator{font-family:var(--mono);font-size:11px;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.04em}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:16px;padding:34px}
+    h1,h2,h3{margin:0;color:var(--text-primary);font-weight:600}
+    h1{font-size:clamp(42px,8vw,66px);line-height:.95;letter-spacing:-.055em}
+    h2{font-size:clamp(28px,5vw,38px);line-height:1;letter-spacing:-.045em}
+    h3{font-size:24px;letter-spacing:-.03em}
+    .lead{margin-top:16px;font-size:18px;line-height:1.72;color:var(--text-secondary);max-width:690px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .button,.button-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border-radius:14px;text-decoration:none;font-size:14px;font-weight:600}
+    .button{background:var(--accent-green);color:var(--bg-base);border:1px solid var(--accent-green);box-shadow:0 0 20px var(--accent-green-glow)}
+    .button:hover{background:var(--accent-green-dim);border-color:var(--accent-green-dim);color:var(--bg-base);box-shadow:0 0 28px rgba(0,230,118,.22)}
+    .button-secondary{background:transparent;border:1px solid var(--border-subtle);color:var(--text-primary)}
+    .button-secondary:hover{border-color:var(--accent-cyan);color:var(--accent-cyan);background:rgba(0,229,255,.04)}
+    .stack{display:grid;gap:12px}
+    .panel,.resource-card,.footer-card{padding:18px;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);background:var(--bg-surface)}
+    .panel p,.resource-card p,.footer-card p,.section-copy,.resource-list,.resource-note{font-size:14px;line-height:1.74;color:var(--text-secondary)}
+    .panel ul,.resource-list{margin:12px 0 0;padding-left:18px}
+    .panel li + li,.resource-list li + li{margin-top:8px}
+    .section{margin-top:16px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
+    .kicker{margin-bottom:10px}
+    .jump-shell{margin-top:16px;background:var(--bg-elevated)}
+    .jump-grid{display:flex;flex-wrap:wrap;gap:10px}
+    .jump-link{display:inline-flex;align-items:center;min-height:38px;padding:0 12px;border-radius:12px;border:1px solid var(--border-subtle);background:transparent;color:var(--text-primary);text-decoration:none;font-size:13px;font-weight:600}
+    .jump-link:hover{border-color:var(--accent-cyan);color:var(--accent-cyan);background:rgba(0,229,255,.04)}
+    .resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .resource-card{display:flex;flex-direction:column;gap:12px;min-height:100%}
+    .resource-card--highlight{background:linear-gradient(180deg,rgba(0,230,118,.08),transparent 70%),var(--bg-surface);border-color:rgba(0,230,118,.18)}
+    .resource-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+    .resource-title{font-size:22px;line-height:1.1;letter-spacing:-.03em;color:var(--text-primary)}
+    .resource-type{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border-radius:999px;background:rgba(0,229,255,.08);color:var(--accent-cyan);font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+    .resource-note{margin-top:auto;color:var(--text-tertiary)}
+    .resource-links{display:flex;flex-wrap:wrap;gap:10px}
+    .resource-links a{text-decoration:none;font-size:14px;font-weight:500}
+    .section-copy{max-width:720px}
+    .two-up{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .footer-card{margin-top:16px;background:var(--bg-inset)}
+    .footer-card p{color:var(--text-tertiary)}
+    @media (max-width:1080px){.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:980px){.hero,.two-up{grid-template-columns:1fr}}
+    @media (max-width:720px){.page{width:min(100%,calc(100% - 16px))}.nav{flex-direction:column;align-items:flex-start}.hero,.section,.footer-card,.jump-shell{padding:22px}.nav-links,.nav-right{width:100%}.nav-right{justify-content:space-between}.hero-actions{flex-direction:column}.button,.button-secondary{width:100%}.resource-grid{grid-template-columns:1fr}.section-head{display:block}.section-copy{margin-top:12px}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav surface">
+      <a class="brand" href="/"><span class="mark">R0</span><span>R0Ready</span><span class="tag">Resources</span></a>
+      <div class="nav-right">
+        <div class="nav-links"><a href="/">Home</a><a href="/demo/">Try free</a><a href="/spotify/">Spotify</a><a href="/#buy">Buy access</a></div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme">
+          <span id="theme-toggle-label">Light mode</span>
+          <span class="theme-toggle-indicator" id="theme-toggle-indicator">Dark</span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="hero surface">
+      <div>
+        <div class="eyebrow">Helpful links</div>
+        <h1>CII R0 exam resources worth your time.</h1>
+        <p class="lead">A curated list of useful links for R01-R05 candidates: official CII pages, third-party training providers, exam strategy articles, podcasts, communities, and a few R0Ready resources that fit alongside the app.</p>
+        <div class="hero-actions">
+          <a class="button" href="#r0ready-resources">Start with R0Ready resources</a>
+          <a class="button-secondary" href="#official-cii">Jump to official CII links</a>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="panel">
+          <h3>What this page is for</h3>
+          <ul>
+            <li>Give R0 students a practical shortlist rather than a dump of generic finance links.</li>
+            <li>Keep useful study tools, exam guidance, and industry context in one place.</li>
+            <li>Make the page readable on mobile without relying on wide tables.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="chip">For firms</div>
+          <h3 style="margin-top:10px">Supporting your team's CII success</h3>
+          <p style="margin-top:12px">If you're a financial advice practice, network, or training provider with staff working toward CII qualifications, R0Ready can help with structured, self-paced exam prep.</p>
+          <div class="hero-actions" style="margin-top:16px">
+            <a class="button-secondary" href="mailto:hello@r0ready.com?subject=Team%20pricing%20for%20R0Ready">Ask about team pricing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="jump-shell surface" aria-label="Resources page sections">
+      <div class="jump-grid">
+        <a class="jump-link" href="#r0ready-resources">R0Ready</a>
+        <a class="jump-link" href="#official-cii">Official CII</a>
+        <a class="jump-link" href="#training-providers">Training providers</a>
+        <a class="jump-link" href="#podcasts">Podcasts</a>
+        <a class="jump-link" href="#youtube">YouTube</a>
+        <a class="jump-link" href="#communities">Communities</a>
+        <a class="jump-link" href="#exam-tips">Exam tips</a>
+        <a class="jump-link" href="#industry-news">Industry news</a>
+      </div>
+    </section>
+
+    <section class="section surface" id="r0ready-resources">
+      <div class="section-head">
+        <div><div class="kicker">R0Ready resources</div><h2>Start here if you want the R0Ready version of support.</h2></div>
+        <p class="section-copy">These are the pieces that sit closest to the product itself: the app, the free demo, the Spotify companion, and Michael's Substack on the career-change path into planning.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card resource-card--highlight">
+          <div class="resource-top">
+            <h3 class="resource-title">R0Ready App</h3>
+            <span class="resource-type">App</span>
+          </div>
+          <p>Spaced repetition practice for R01-R05, built around original questions, timed mocks, and progress tracking.</p>
+          <div class="resource-links">
+            <a href="https://app.r0ready.com" target="_blank" rel="noopener noreferrer">Open app</a>
+          </div>
+        </article>
+        <article class="resource-card resource-card--highlight">
+          <div class="resource-top">
+            <h3 class="resource-title">Free R01 Demo</h3>
+            <span class="resource-type">Demo</span>
+          </div>
+          <p>Try 15 free R01 questions with explanations and see how the spaced repetition flow actually feels.</p>
+          <div class="resource-links">
+            <a href="/demo/">Open demo</a>
+          </div>
+        </article>
+        <article class="resource-card resource-card--highlight">
+          <div class="resource-top">
+            <h3 class="resource-title">Spotify Companion</h3>
+            <span class="resource-type">Audio</span>
+          </div>
+          <p>Free audio companion to the exam journey, paced around the syllabus and built for commutes, walks, and review away from the screen.</p>
+          <div class="resource-links">
+            <a href="/spotify/">Open page</a>
+          </div>
+        </article>
+        <article class="resource-card resource-card--highlight">
+          <div class="resource-top">
+            <h3 class="resource-title">Unadvised</h3>
+            <span class="resource-type">Newsletter</span>
+          </div>
+          <p>Michael's Substack on money, work, and changing career into financial planning.</p>
+          <div class="resource-links">
+            <a href="https://substack.com/@michael531344" target="_blank" rel="noopener noreferrer">Read Unadvised</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="official-cii">
+      <div class="section-head">
+        <div><div class="kicker">Official CII</div><h2>The pages every R0 student should know.</h2></div>
+        <p class="section-copy">The practical starting point: qualification info, supporting exam documents, results timing, and the CII tools included with enrolment.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Diploma in Regulated Financial Planning</h3>
+            <span class="resource-type">Official</span>
+          </div>
+          <p>Main qualification page covering enrolment, syllabus details, and how the diploma is structured.</p>
+          <div class="resource-links">
+            <a href="https://www.cii.co.uk/learning/qualifications/diploma-in-regulated-financial-planning-qualification/" target="_blank" rel="noopener noreferrer">Open qualification page</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">RevisionMate</h3>
+            <span class="resource-type">Included</span>
+          </div>
+          <p>CII's own online practice question tool, included with enrolment or study-text purchase.</p>
+          <div class="resource-note">Accessed through your CII enrolment rather than a public landing page.</div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Supporting Exam Documents</h3>
+            <span class="resource-type">Official</span>
+          </div>
+          <p>Tax tables and related documents that appear in the exam and are worth studying beforehand.</p>
+          <div class="resource-links">
+            <a href="https://www.cii.co.uk/learning/qualifications/assessment-information/before-the-exam/supporting-exam-documents/" target="_blank" rel="noopener noreferrer">Open supporting documents</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Exam Results Information</h3>
+            <span class="resource-type">Official</span>
+          </div>
+          <p>Explains how and when CII exam results are released after you sit a unit.</p>
+          <div class="resource-links">
+            <a href="https://www.cii.co.uk/learning/qualifications/assessment-information/after-the-exam/results-information/" target="_blank" rel="noopener noreferrer">Open results info</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">CII Exam Guides</h3>
+            <span class="resource-type">Essential</span>
+          </div>
+          <p>Available per unit on the CII website and usually the first free mock-style paper worth working through.</p>
+          <div class="resource-note">Look for the guide attached to the specific R0 unit you are sitting.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="training-providers">
+      <div class="section-head">
+        <div><div class="kicker">Training providers</div><h2>Third-party providers that come up repeatedly for R0 students.</h2></div>
+        <p class="section-copy">Useful when you want more than the study text: readable notes, one-day workshops, calculation workbooks, e-learning, or mocks that feel closer to the real exam.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Bespoke Training Solutions</h3>
+            <span class="resource-type">R01-R05</span>
+          </div>
+          <p>Study guides, e-learning, workshops, and one-day masterclasses across the full R0 range. Often cited as the exam-specialist option.</p>
+          <div class="resource-links">
+            <a href="https://www.bespoketrainingsolutions.com/" target="_blank" rel="noopener noreferrer">Main site</a>
+            <a href="https://careerszone.bespoketrainingsolutions.com/" target="_blank" rel="noopener noreferrer">Careers Zone</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Brand Financial Training</h3>
+            <span class="resource-type">R01-R05</span>
+          </div>
+          <p>Mock papers, revision notes, study kits, and especially strong calculation workbooks for R02, R03, and R04.</p>
+          <div class="resource-links">
+            <a href="https://brandft.co.uk/" target="_blank" rel="noopener noreferrer">Main site</a>
+            <a href="https://brandft.co.uk/navigating-the-cii-r0-exams-choosing-the-right-path/" target="_blank" rel="noopener noreferrer">R0 navigation guide</a>
+            <a href="https://brandft.co.uk/current-cii-exams-pass-rates-as-at-july-2025/" target="_blank" rel="noopener noreferrer">Pass rates tracker</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">KnowR0</h3>
+            <span class="resource-type">Digital</span>
+          </div>
+          <p>E-learning packages and mock exams for R01-R05, often recommended for explanations and exam-style feel.</p>
+          <div class="resource-links">
+            <a href="https://knowr0.co.uk/" target="_blank" rel="noopener noreferrer">Open KnowR0</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Wizard Learning</h3>
+            <span class="resource-type">Structured</span>
+          </div>
+          <p>Online courses, gap analysis, and assessments, with a long-running pass-rate comparison table that many students check.</p>
+          <div class="resource-links">
+            <a href="https://www.wizardlearning.com/" target="_blank" rel="noopener noreferrer">Main site</a>
+            <a href="https://www.wizardlearning.com/cii_pass_rates.php" target="_blank" rel="noopener noreferrer">Pass rates table</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Skills Edge Training</h3>
+            <span class="resource-type">Masterclasses</span>
+          </div>
+          <p>One-day revision support and masterclass-style help for students who want intensive sessions alongside self-study.</p>
+          <div class="resource-links">
+            <a href="https://skillsedge.co.uk/diploma-in-regulated-financial-planning/" target="_blank" rel="noopener noreferrer">Open Skills Edge</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Redmill Advance</h3>
+            <span class="resource-type">Self-study</span>
+          </div>
+          <p>Self-study courses with video tutorials, study guides, assignments, and mock exams across R01-R05.</p>
+          <div class="resource-links">
+            <a href="https://www.redmilladvance.com/courses" target="_blank" rel="noopener noreferrer">Open courses</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">The Patterson Group</h3>
+            <span class="resource-type">Audio</span>
+          </div>
+          <p>Audio study material for R01-R05, aimed at candidates who want to learn while commuting, walking, or training.</p>
+          <div class="resource-links">
+            <a href="https://www.pstgroup.co.uk/r0-study-material/" target="_blank" rel="noopener noreferrer">Study material</a>
+            <a href="https://www.r0exams.co.uk/" target="_blank" rel="noopener noreferrer">R0 Exams site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="podcasts">
+      <div class="section-head">
+        <div><div class="kicker">Podcasts</div><h2>Useful audio for career context and topic understanding.</h2></div>
+        <p class="section-copy">Some of these are directly about becoming a planner. Others are better for helping pensions, tax, investment, and protection concepts click outside revision mode.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Financial Planner Life</h3>
+            <span class="resource-type">Career</span>
+          </div>
+          <p>Career stories from planners, paraplanners, and career changers. Good for seeing where the exams fit into real careers.</p>
+          <div class="resource-links">
+            <a href="https://open.spotify.com/show/6vdF54D6IfBGy20h6Xvt4k" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a href="https://podcasts.apple.com/us/podcast/financial-planner-life-podcast/id1505494249" target="_blank" rel="noopener noreferrer">Apple</a>
+            <a href="https://financialplannerlife.com/" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">NextGen Planners</h3>
+            <span class="resource-type">Career</span>
+          </div>
+          <p>The community podcast for new and aspiring planners, with a mix of best practice, career development, and industry discussion.</p>
+          <div class="resource-links">
+            <a href="https://open.spotify.com/show/6Qi7VlBKKBMLG1ZDw04vvu" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a href="https://podcasts.apple.com/gb/podcast/nextgen-planners/id1130959299" target="_blank" rel="noopener noreferrer">Apple</a>
+            <a href="https://www.nextgenplanners.co.uk/podcasts" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">The I Just Fell Into Financial Planning Podcast</h3>
+            <span class="resource-type">Career</span>
+          </div>
+          <p>Interviews with people at different stages of financial planning careers, especially useful if you are entering from another field.</p>
+          <div class="resource-links">
+            <a href="https://podcasts.apple.com/gb/podcast/the-i-just-fell-into-financial-planning-podcast/id1770296362" target="_blank" rel="noopener noreferrer">Listen on Apple</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">The Financial Planning Podcast</h3>
+            <span class="resource-type">Career</span>
+          </div>
+          <p>Conversations with directors and owners of planning firms, useful for understanding the profession on the other side of the exams.</p>
+          <div class="resource-links">
+            <a href="https://podcasts.apple.com/us/podcast/the-financial-planning-podcast/id1749265556" target="_blank" rel="noopener noreferrer">Listen on Apple</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Meaningful Money</h3>
+            <span class="resource-type">Knowledge</span>
+          </div>
+          <p>Plain-English coverage of pensions, investments, protection, and tax that helps make R02-R05 topics easier to grasp.</p>
+          <div class="resource-links">
+            <a href="https://podcasts.apple.com/gb/podcast/the-meaningful-money-personal-finance-podcast/id581790263" target="_blank" rel="noopener noreferrer">Apple</a>
+            <a href="https://meaningfulmoney.tv/" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="youtube">
+      <div class="section-head">
+        <div><div class="kicker">YouTube</div><h2>Visual explainers and industry-facing content.</h2></div>
+        <p class="section-copy">Useful when text is dragging and you want a clearer visual explanation of pensions, tax, investments, or the shape of the profession.</p>
+      </div>
+      <div class="two-up">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Meaningful Money</h3>
+            <span class="resource-type">Explainers</span>
+          </div>
+          <p>Simple, visual walkthroughs of pensions, ISAs, investments, and tax. Especially useful for R02-R05 topic understanding.</p>
+          <div class="resource-links">
+            <a href="https://www.youtube.com/@MeaningfulMoney" target="_blank" rel="noopener noreferrer">Open channel</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Financial Planner Life</h3>
+            <span class="resource-type">Career</span>
+          </div>
+          <p>Career-focused content and interviews, including collaborations with training providers that many R0 students already know.</p>
+          <div class="resource-links">
+            <a href="https://www.youtube.com/@FinancialPlannerLife" target="_blank" rel="noopener noreferrer">Open channel</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="communities">
+      <div class="section-head">
+        <div><div class="kicker">Communities</div><h2>Places where R0 questions and career questions overlap.</h2></div>
+        <p class="section-copy">Useful for seeing what other candidates are struggling with, which providers people recommend, and how early-career planners are navigating the qualification route.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">The Big Tent</h3>
+            <span class="resource-type">Forum</span>
+          </div>
+          <p>The best-known paraplanning discussion board, with active R0 study-material threads and a particularly useful CPD and exams section.</p>
+          <div class="resource-links">
+            <a href="https://thebigtent.paraplannersassembly.co.uk/" target="_blank" rel="noopener noreferrer">Open The Big Tent</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">r/cii</h3>
+            <span class="resource-type">Reddit</span>
+          </div>
+          <p>Small but growing subreddit for CII-specific discussion.</p>
+          <div class="resource-links">
+            <a href="https://www.reddit.com/r/cii/" target="_blank" rel="noopener noreferrer">Open subreddit</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">r/UKPersonalFinance</h3>
+            <span class="resource-type">Reddit</span>
+          </div>
+          <p>Not exam-specific, but very useful for strengthening your intuition around tax, pensions, and investments.</p>
+          <div class="resource-links">
+            <a href="https://www.reddit.com/r/UKPersonalFinance/" target="_blank" rel="noopener noreferrer">Open subreddit</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">NextGen Planners Community</h3>
+            <span class="resource-type">Community</span>
+          </div>
+          <p>Community and events for new and aspiring planners, with a strong overlap between studying and career development.</p>
+          <div class="resource-links">
+            <a href="https://www.nextgenplanners.co.uk/" target="_blank" rel="noopener noreferrer">Open NextGen Planners</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="exam-tips">
+      <div class="section-head">
+        <div><div class="kicker">Exam strategy</div><h2>Practical reading for how to approach the R0 route.</h2></div>
+        <p class="section-copy">A mix of first-hand advice, training-provider guidance, and higher-level overviews of exam order, revision method, and time management.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">10 Top Tips for the R0 Exams</h3>
+            <span class="resource-type">LinkedIn</span>
+          </div>
+          <p>James Tout's first-hand account of passing R01-R05 as a career changer, with practical study and sequencing tips.</p>
+          <div class="resource-links">
+            <a href="https://www.linkedin.com/pulse/10-top-tips-taking-chartered-insurance-institutes-r0-exams-james-tout" target="_blank" rel="noopener noreferrer">Read article</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">What Order to Sit the R0 Exams</h3>
+            <span class="resource-type">BTS</span>
+          </div>
+          <p>BTS guidance on unit sequencing, including the usual question of whether to start with R01 or R05.</p>
+          <div class="resource-links">
+            <a href="https://careerszone.bespoketrainingsolutions.com/what-is-the-best-order-to-sit-the-cii-r0-exams-in/" target="_blank" rel="noopener noreferrer">Read BTS guide</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Navigating the R0 Exams</h3>
+            <span class="resource-type">Brand FT</span>
+          </div>
+          <p>Brand Financial Training's guide to the R0 route, including data on the order candidates actually choose.</p>
+          <div class="resource-links">
+            <a href="https://brandft.co.uk/navigating-the-cii-r0-exams-choosing-the-right-path/" target="_blank" rel="noopener noreferrer">Read guide</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Revision Tips for the R0 Exams</h3>
+            <span class="resource-type">Brand FT</span>
+          </div>
+          <p>Practical tactics for mock usage, multi-response question technique, and time management.</p>
+          <div class="resource-links">
+            <a href="https://brandft.co.uk/revision-tips-for-the-cii-r0-exams/" target="_blank" rel="noopener noreferrer">Read revision tips</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">A Beginner's Guide to the R0 Exams</h3>
+            <span class="resource-type">Professional Paraplanner</span>
+          </div>
+          <p>High-level starting guide covering enrolment, study options, exam format, and how to get moving if you are new to the diploma.</p>
+          <div class="resource-links">
+            <a href="https://professionalparaplanner.co.uk/development/a-beginners-guide-to-the-r0-exams/" target="_blank" rel="noopener noreferrer">Read beginner's guide</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section surface" id="industry-news">
+      <div class="section-head">
+        <div><div class="kicker">Industry news</div><h2>Good references once you want more than exam technique.</h2></div>
+        <p class="section-copy">These are useful for R01 regulation context, for following the industry you are qualifying into, and for reinforcing tax, pensions, and investment knowledge from better real-world angles.</p>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Money Marketing</h3>
+            <span class="resource-type">News</span>
+          </div>
+          <p>Trade publication covering regulation, policy changes, and adviser-facing industry analysis.</p>
+          <div class="resource-links">
+            <a href="https://www.moneymarketing.co.uk/" target="_blank" rel="noopener noreferrer">Open Money Marketing</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">Professional Paraplanner</h3>
+            <span class="resource-type">Magazine</span>
+          </div>
+          <p>Exam tips, technical articles, and career content aimed at paraplanners and aspiring advisers.</p>
+          <div class="resource-links">
+            <a href="https://professionalparaplanner.co.uk/" target="_blank" rel="noopener noreferrer">Open Professional Paraplanner</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">IFA Magazine</h3>
+            <span class="resource-type">News</span>
+          </div>
+          <p>News, analysis, and CPD-style content for IFAs, including wider industry developments.</p>
+          <div class="resource-links">
+            <a href="https://ifamagazine.com/" target="_blank" rel="noopener noreferrer">Open IFA Magazine</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">FCA Handbook</h3>
+            <span class="resource-type">Reference</span>
+          </div>
+          <p>The source material for a lot of R01 regulation content. Dense, but definitive.</p>
+          <div class="resource-links">
+            <a href="https://www.handbook.fca.org.uk/" target="_blank" rel="noopener noreferrer">Open FCA Handbook</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">HMRC Tax Guidance</h3>
+            <span class="resource-type">Reference</span>
+          </div>
+          <p>Official tax rates, allowances, and guidance that are directly relevant to R03 study.</p>
+          <div class="resource-links">
+            <a href="https://www.gov.uk/government/organisations/hm-revenue-customs" target="_blank" rel="noopener noreferrer">Open HMRC</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">The Pensions Regulator</h3>
+            <span class="resource-type">Reference</span>
+          </div>
+          <p>Useful for workplace pension guidance and regulation, especially around R04 topics.</p>
+          <div class="resource-links">
+            <a href="https://www.thepensionsregulator.gov.uk/" target="_blank" rel="noopener noreferrer">Open TPR</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <div class="resource-top">
+            <h3 class="resource-title">MoneyHelper</h3>
+            <span class="resource-type">Plain English</span>
+          </div>
+          <p>Government-backed guidance on pensions, investments, insurance, and related personal finance topics in cleaner language than most source material.</p>
+          <div class="resource-links">
+            <a href="https://www.moneyhelper.org.uk/" target="_blank" rel="noopener noreferrer">Open MoneyHelper</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer-card surface">
+      <p>This page is curated for CII R01-R05 students and early-career financial planners. Questions, broken links, or suggestions: <a href="mailto:hello@r0ready.com">hello@r0ready.com</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const THEME_KEY = 'r0ready-landing-theme';
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleLabel = document.getElementById('theme-toggle-label');
+    const themeToggleIndicator = document.getElementById('theme-toggle-indicator');
+    function applyTheme(theme) {
+      const nextTheme = theme === 'light' ? 'light' : 'dark';
+      document.body.dataset.theme = nextTheme;
+      document.documentElement.style.colorScheme = nextTheme;
+      themeToggleLabel.textContent = nextTheme === 'dark' ? 'Light mode' : 'Dark mode';
+      themeToggleIndicator.textContent = nextTheme === 'dark' ? 'Dark' : 'Light';
+      try { localStorage.setItem(THEME_KEY, nextTheme); } catch {}
+    }
+    function initTheme() {
+      let storedTheme = 'light';
+      try { storedTheme = localStorage.getItem(THEME_KEY) || 'light'; } catch {}
+      applyTheme(storedTheme);
+    }
+    themeToggle.addEventListener('click', () => {
+      applyTheme(document.body.dataset.theme === 'light' ? 'dark' : 'light');
+    });
+    initTheme();
+  </script>
+</body>
+</html>
